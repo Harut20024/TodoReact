@@ -1,0 +1,32 @@
+input[type="checkbox"] {
+    appearance: none;
+    width: 16px; /* Adjusted width */
+    height: 16px; /* Adjusted height */
+    border: 2px solid #3498db; /* Blue border */
+    border-radius: 4px;
+    cursor: pointer;
+    position: relative;
+    top: 10px;
+    right: 3px;
+    transition: border-color 0.3s ease-in-out;
+}
+
+input[type="checkbox"]:checked {
+    border-color: #27ae60; /* Green color when checked */
+}
+
+input[type="checkbox"]::before {
+    content: '\2713'; /* Unicode checkmark symbol */
+    font-size: 16px;
+    color: #27ae60; /* Green color */
+    position: absolute;
+    top: 60%; /* Adjust this value to move it up or down */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+input[type="checkbox"]:checked::before {
+    opacity: 1;
+}
